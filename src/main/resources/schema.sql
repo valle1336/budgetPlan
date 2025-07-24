@@ -1,0 +1,8 @@
+CREATE TABLE IF NOT EXISTS transactions (
+    id SERIAL PRIMARY KEY,
+    title VARCHAR(255) NOT NULL,
+    amount NUMERIC NOT NULL,
+    type VARCHAR(10) CHECK (type IN ('INCOME', 'EXPENSE')) NOT NULL,
+    category VARCHAR(50),
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
